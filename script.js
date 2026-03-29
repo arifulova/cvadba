@@ -60,73 +60,53 @@ const form = document.getElementById('rsvpForm');
 const messageDiv = document.getElementById('formMessage');
 
 if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        const name = document.getElementById('guestName').value;
-        const attendance = document.querySelector('input[name="attendance"]:checked');
-        const drinks = document.querySelectorAll('input[type="checkbox"]:checked');
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('.submit-btn');
         
-        if (!name) {
-            showMessage('Пожалуйста, укажите имя и фамилию', 'error');
-            return;
+        // Блокируем кнопку на время отправки
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ОТПРАВКА...';
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showMessage('✅ Спасибо! Ваш ответ успешно отправлен!', 'success');
+                form.reset();
+                
+                // Перенаправление через 3 секунды
+                setTimeout(() => {
+                    window.location.href = form.querySelector('input[name="_next"]').value;
+                }, 3000);
+            } else {
+                showMessage('❌ Ошибка отправки. Попробуйте ещё раз или напишите нам в VK.', 'error');
+            }
+        } catch (error) {
+            showMessage('❌ Ошибка соединения. Проверьте интернет и попробуйте снова.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ОТПРАВИТЬ';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
         }
-        
-        if (!attendance) {
-            showMessage('Пожалуйста, укажите, сможете ли вы присутствовать', 'error');
-            return;
-        }
-        
-        let attendanceText = '';
-        switch(attendance.value) {
-            case 'come':
-                attendanceText = '✅ Я приду / Мы придем';
-                break;
-            case 'not-come':
-                attendanceText = '❌ Прийти не получится';
-                break;
-            case 'with-partner':
-                attendanceText = '👫 Буду со своей парой (+1)';
-                break;
-        }
-        
-        const drinksList = Array.from(drinks).map(d => d.value);
-        const drinksText = drinksList.length > 0 ? drinksList.join(', ') : 'Не указаны';
-        
-        const rsvpData = {
-            name: name,
-            attendance: attendance.value,
-            attendanceText: attendanceText,
-            drinks: drinksList,
-            drinksText: drinksText,
-            date: new Date().toLocaleString('ru-RU')
-        };
-        
-        // Сохраняем в localStorage
-        let allResponses = localStorage.getItem('wedding_rsvp');
-        if (allResponses) {
-            allResponses = JSON.parse(allResponses);
-        } else {
-            allResponses = [];
-        }
-        allResponses.push(rsvpData);
-        localStorage.setItem('wedding_rsvp', JSON.stringify(allResponses));
-        
-        console.log('Сохранён ответ:', rsvpData);
-        
-        // Отправляем в ВКонтакте
-        sendToVK(rsvpData);
-        
-        showMessage('Спасибо! Ваш ответ отправлен. Вы будете перенаправлены в ВК для подтверждения.', 'success');
-        
-        // Очищаем форму
-        form.reset();
-        
-        // Не очищаем, а просто показываем сообщение
-        setTimeout(() => {
-            messageDiv.style.display = 'none';
-        }, 5000);
     });
+}
+
+function showMessage(text, type) {
+    messageDiv.textContent = text;
+    messageDiv.className = `form-message ${type}`;
+    messageDiv.style.display = 'block';
 }
 
 function showMessage(text, type) {

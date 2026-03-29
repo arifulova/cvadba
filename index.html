@@ -89,15 +89,15 @@
                 <div class="location-time">15:00</div>
                 <div class="location-details">
                     <h3>Бракосочетание состоится в ЗАГС</h3>
-                    <p>ул. 50 лет Октября, 76, Белорецк</p>
+                    <p>ул. 50 лет Октября, 76</p>
                 </div>
             </div>
             
             <div class="reception-location">
                 <div class="location-time">17:00</div>
                 <div class="location-details">
-                    <h3>Мы с радостью будем вас ждать в ресторане "Белые Росы"</h3>
-                    <p>ул. Крупской, 56, Белорецк</p>
+                    <h3>Мы с радостью будем вас ждать в ресторане "GOLD"</h3>
+                    <p>ул. Крупской, 56</p>
                 </div>
             </div>
             
@@ -116,64 +116,67 @@
         </section>
         
         <!-- Анкета гостя -->
-        <section class="rsvp">
-            <h2>Анкета гостя</h2>
-            <p class="rsvp-deadline">Пожалуйста, подтвердите свое присутствие не позднее <strong>01.09.2025</strong></p>
-            
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <label>Имя и Фамилия</label>
-                    <input type="text" id="guestName" placeholder="Если вы будете с парой или семьей, то введите все полные данные" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Присутствие на торжестве</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="attendance" value="come" required> Я приду / Мы придем
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="attendance" value="not-come"> Прийти не получится
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="attendance" value="with-partner"> Буду со своей парой (+1)
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Предпочтения по напиткам</label>
-                    <div class="drinks-grid">
-                        <label class="drink-option">
-                            <input type="checkbox" value="Вино красное"> Вино красное
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Вино белое"> Вино белое
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Коньяк"> Коньяк
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Виски"> Виски
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Водка"> Водка
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Шампанское"> Шампанское
-                        </label>
-                        <label class="drink-option">
-                            <input type="checkbox" value="Безалкогольное"> Безалкогольное
-                        </label>
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ
-                </button>
-            </form>
-            <div id="formMessage" class="form-message"></div>
-        </section>
+<section class="rsvp">
+    <h2>Анкета гостя</h2>
+    <p class="rsvp-deadline">Пожалуйста, подтвердите свое присутствие не позднее <strong>01.07.2026</strong></p>
+    
+    <form id="rsvpForm" action="https://formspree.io/f/xlgojprp" method="POST">
+        <div class="form-group">
+            <label>Имя и Фамилия</label>
+            <input type="text" name="name" id="guestName" placeholder="Если вы будете с парой или семьей, то введите все полные данные" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Присутствие на торжестве</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="attendance" value="come" required> Я приду / Мы придем
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="attendance" value="not-come"> Прийти не получится
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="attendance" value="with-partner"> Буду со своей парой (+1)
+                </label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Предпочтения по напиткам</label>
+            <div class="drinks-grid">
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Вино красное"> Вино красное
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Вино белое"> Вино белое
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Коньяк"> Коньяк
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Виски"> Виски
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Водка"> Водка
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Шампанское"> Шампанское
+                </label>
+                <label class="drink-option">
+                    <input type="checkbox" name="drinks" value="Безалкогольное"> Безалкогольное
+                </label>
+            </div>
+        </div>
+        
+        <!-- Скрытое поле для темы письма -->
+        <input type="hidden" name="_subject" value="️ Новая заявка на свадьбу!">
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ
+        </button>
+    </form>
+    <div id="formMessage" class="form-message"></div>
+</section>
         
         <!-- Дресс-код -->
         <section class="dresscode">
@@ -234,7 +237,6 @@
         
         <footer>
             <p>С нетерпением ждём встречи с Вами!</p>
-            <p class="brand">uiks.brand <i class="fas fa-camera"></i> Фото · 2026</p>
         </footer>
     </main>
 
