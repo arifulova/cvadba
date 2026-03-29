@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Приглашение на свадьбу | Данила & Вероника</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="invitation">
+        
+        <!-- Герой-секция с именами -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="names">Данила <span class="amp">&</span> Вероника</h1>
+                <div class="hero-text">
+                    <p>С огромной радостью приглашаем вас разделить с нами</p>
+                    <p>трогательный и важный момент нашей жизни</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Дата торжества -->
+        <section class="date-section">
+            <div class="date-container">
+                <h2 class="date-title"><i class="far fa-calendar-alt"></i> Август 2026</h2>
+                <div class="calendar-wrapper">
+                    <div class="weekdays">
+                        <span>Пн</span>
+                        <span>Вт</span>
+                        <span>Ср</span>
+                        <span>Чт</span>
+                        <span>Пт</span>
+                        <span>Сб</span>
+                        <span>Вс</span>
+                    </div>
+                    <div class="days-grid">
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="day highlighted">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+                        <span>29</span>
+                        <span>30</span>
+                        <span>31</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Место проведения -->
+        <section class="location">
+            <h2><i class="fas fa-map-marker-alt"></i> Белорецк</h2>
+            
+            <div class="ceremony-location">
+                <div class="location-time">15:00</div>
+                <div class="location-details">
+                    <h3>Бракосочетание состоится в ЗАГС</h3>
+                    <p>ул. 50 лет Октября, 76, Белорецк</p>
+                </div>
+            </div>
+            
+            <div class="reception-location">
+                <div class="location-time">17:00</div>
+                <div class="location-details">
+                    <h3>Мы с радостью будем вас ждать в ресторане "Белые Росы"</h3>
+                    <p>ул. Крупской, 56, Белорецк</p>
+                </div>
+            </div>
+            
+            <button class="map-btn" onclick="openMap()">
+                <i class="fas fa-map-marker-alt"></i> показать на карте
+            </button>
+        </section>
+        
+        <!-- Пожелания про вино -->
+        <section class="wishes">
+            <h2>Дорогие гости!</h2>
+            <div class="no-flowers">
+                <i class="fas fa-wine-bottle"></i>
+                <p>Пусть наши подарки не завянут!<br>С радостью примем в дар бутылочку вина вместо букета</p>
+            </div>
+        </section>
+        
+        <!-- Анкета гостя -->
+        <section class="rsvp">
+            <h2>Анкета гостя</h2>
+            <p class="rsvp-deadline">Пожалуйста, подтвердите свое присутствие не позднее <strong>01.09.2025</strong></p>
+            
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label>Имя и Фамилия</label>
+                    <input type="text" id="guestName" placeholder="Если вы будете с парой или семьей, то введите все полные данные" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Присутствие на торжестве</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="attendance" value="come" required> Я приду / Мы придем
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="attendance" value="not-come"> Прийти не получится
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="attendance" value="with-partner"> Буду со своей парой (+1)
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Предпочтения по напиткам</label>
+                    <div class="drinks-grid">
+                        <label class="drink-option">
+                            <input type="checkbox" value="Вино красное"> Вино красное
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Вино белое"> Вино белое
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Коньяк"> Коньяк
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Виски"> Виски
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Водка"> Водка
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Шампанское"> Шампанское
+                        </label>
+                        <label class="drink-option">
+                            <input type="checkbox" value="Безалкогольное"> Безалкогольное
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ
+                </button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </section>
+        
+        <!-- Дресс-код -->
+        <section class="dresscode">
+            <h2><i class="fas fa-tshirt"></i> Dress code</h2>
+            <p class="dresscode-text">НАМ БУДЕТ ОЧЕНЬ ПРИЯТНО,<br>ЕСЛИ ВАШ НАРЯД БУДЕТ СООТВЕТСТВОВАТЬ ЦВЕТОВОЙ ГАММЕ НАШЕЙ СВАДЬБЫ</p>
+            <div class="colors">
+                <div class="color-row">
+                    <div class="color-dot" style="background: #D8D8D8;"></div>
+                    <div class="color-dot" style="background: #F8F5F0;"></div>
+                    <div class="color-dot" style="background: #EDE5D8;"></div>
+                    <div class="color-dot" style="background: #C9B8A8;"></div>
+                    <div class="color-dot" style="background: #D0D8E8;"></div>
+                </div>
+                <div class="color-row">
+                    <div class="color-dot" style="background: #B8C8D8;"></div>
+                    <div class="color-dot" style="background: #7A94A8;"></div>
+                    <div class="color-dot" style="background: #6B7F94;"></div>
+                    <div class="color-dot" style="background: #8FA894;"></div>
+                    <div class="color-dot" style="background: #6B7F6F;"></div>
+                </div>
+            </div>
+            <div class="white-warning">
+                <i class="fas fa-heart"></i>
+                <p><strong>Давайте оставим белый цвет только для невесты</strong></p>
+            </div>
+        </section>
+        
+        <!-- Контакты ВКонтакте -->
+        <section class="contacts">
+            <h2>Контакты</h2>
+            <p>Если у вас остались вопросы, вы можете обращаться к нам</p>
+            <a href="https://vk.ru/id193042151" target="_blank" class="vk-btn">
+                <i class="fab fa-vk"></i> Написать в VK
+            </a>
+        </section>
+        
+        <!-- Таймер обратного отсчета -->
+        <section class="countdown-section">
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <span>дней</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <span>часов</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <span>минут</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <span>секунд</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>С нетерпением ждём встречи с Вами!</p>
+            <p class="brand">uiks.brand <i class="fas fa-camera"></i> Фото · 2026</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

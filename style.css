@@ -1,0 +1,565 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff 0%, #d4e8f7 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.invitation {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Секции */
+section {
+    padding: 60px 30px;
+    border-bottom: 1px solid #d4e8f7;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c7da0;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #7ec8e0;
+    margin: 15px auto 0;
+}
+
+/* Герой-секция */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 
+                url('images/dv.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 180px 30px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+}
+
+.names {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 30px 0 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.amp {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Дата торжества */
+.date-section {
+    background: linear-gradient(135deg, #e0f0ff 0%, #f0f8ff 100%);
+    padding: 60px 30px;
+}
+
+.date-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.date-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c7da0;
+    position: relative;
+    font-weight: 700;
+}
+
+.date-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #7ec8e0;
+    margin: 15px auto 0;
+}
+
+.date-title i {
+    margin-right: 10px;
+    color: #7ec8e0;
+}
+
+.calendar-wrapper {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2c7da0;
+    font-size: 0.95rem;
+    text-align: center;
+    border-bottom: 2px solid #e0f0ff;
+    padding-bottom: 15px;
+}
+
+.weekdays span {
+    padding: 5px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.days-grid span {
+    padding: 15px 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.days-grid span.empty {
+    visibility: hidden;
+}
+
+.days-grid span.highlighted {
+    background: linear-gradient(135deg, #b8d8fc 0%, #7ec8e0 100%);
+    color: #2c7da0;
+    font-weight: 700;
+    font-size: 1.3rem;
+    box-shadow: 0 3px 10px rgba(126, 200, 224, 0.4);
+    position: relative;
+}
+
+.days-grid span:not(.empty):hover {
+    background: #f0f8ff;
+    transform: scale(1.1);
+}
+
+/* Место проведения */
+.location {
+    text-align: center;
+    background: #ffffff;
+}
+
+.ceremony-location, .reception-location {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    background: #f0f8ff;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.location-time {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c7da0;
+    font-family: 'Playfair Display', serif;
+    min-width: 80px;
+}
+
+.location-details h3 {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.location-details p {
+    color: #7ec8e0;
+    font-size: 0.9rem;
+}
+
+.map-btn {
+    background: none;
+    border: 2px solid #2c7da0;
+    color: #2c7da0;
+    padding: 10px 25px;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.map-btn:hover {
+    background: #2c7da0;
+    color: white;
+}
+
+/* Пожелания про вино */
+.wishes {
+    text-align: center;
+    background: #f0f8ff;
+}
+
+.no-flowers {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border-left: 4px solid #7ec8e0;
+}
+
+.no-flowers i {
+    font-size: 3rem;
+    color: #2c7da0;
+    margin-bottom: 15px;
+}
+
+.no-flowers p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Анкета гостя */
+.rsvp {
+    background: #ffffff;
+}
+
+.rsvp-deadline {
+    text-align: center;
+    color: #7ec8e0;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d4e8f7;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2c7da0;
+    box-shadow: 0 0 0 3px rgba(44,125,160,0.1);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-option input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.drink-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 8px 12px;
+    background: #f0f8ff;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.drink-option:hover {
+    background: #e0f0ff;
+}
+
+.drink-option input {
+    width: auto;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #2c7da0;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background: #1b5a7a;
+    transform: translateY(-2px);
+}
+
+.form-message {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+.form-message.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+}
+
+.form-message.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Дресс-код */
+.dresscode {
+    text-align: center;
+    background: #f0f8ff;
+}
+
+.dresscode-text {
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.colors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.color-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.color-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.color-dot:hover {
+    transform: scale(1.15);
+}
+
+.white-warning {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    color: #2c7da0;
+}
+
+.white-warning i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+
+/* Контакты ВК */
+.contacts {
+    text-align: center;
+}
+
+.vk-btn {
+    display: inline-block;
+    background: #2c7da0;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.vk-btn:hover {
+    background: #1b5a7a;
+    transform: translateY(-2px);
+}
+
+/* Таймер */
+.countdown-section {
+    background: linear-gradient(135deg, #2c7da0 0%, #1b5a7a 100%);
+    color: white;
+    text-align: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+    padding: 15px 20px;
+    border-radius: 15px;
+    min-width: 80px;
+}
+
+.countdown-item span:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    font-family: 'Playfair Display', serif;
+}
+
+.countdown-item span:last-child {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 40px 30px;
+    background: #2c3e50;
+    color: #7ec8e0;
+}
+
+.brand {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    section {
+        padding: 40px 20px;
+    }
+    
+    .hero {
+        padding: 100px 20px;
+        min-height: 80vh;
+    }
+    
+    .names {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .countdown-item {
+        padding: 10px 12px;
+        min-width: 60px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .ceremony-location, .reception-location {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .drinks-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .days-grid span {
+        padding: 12px 3px;
+        font-size: 0.95rem;
+    }
+    
+    .days-grid span.highlighted {
+        font-size: 1.1rem;
+    }
+    
+    .weekdays {
+        font-size: 0.85rem;
+    }
+    
+    .calendar-wrapper {
+        padding: 20px 15px;
+    }
+    
+    .color-dot {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .color-row {
+        gap: 10px;
+    }
+}
